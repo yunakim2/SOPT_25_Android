@@ -17,11 +17,11 @@ class SignUpActivity : AppCompatActivity() {
 
     fun makeController()
     {
-        btSignUp.setOnClickListener {
-            val name = etName.text.toString()
-            val id = etID.text.toString()
-            val pw = etPassword.text.toString()
-            val pwck  = etPWcheck.text.toString()
+        btn_signup_check.setOnClickListener {
+            val name = edit_signup_name.text.toString()
+            val id = edit_signup_id.text.toString()
+            val pw = edit_signup_pw.text.toString()
+            val pwck  = edit_signup_checkpw.text.toString()
 
 
             if(name.isEmpty() || id.isEmpty() || pw.isEmpty()|| pwck.isEmpty())

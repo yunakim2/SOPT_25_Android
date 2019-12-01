@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -30,10 +29,10 @@ class SignInActivity : AppCompatActivity() {
 
     private fun makeController()
     {
-        editSignInID = findViewById(R.id.editTextID)
-        editSignInPW = findViewById(R.id.editTextPW)
-        btnSignInSignIn = findViewById(R.id.btLogin)
-        btnSignInSignUp = findViewById(R.id.btSignIn)
+        editSignInID = findViewById(R.id.edit_id)
+        editSignInPW = findViewById(R.id.edit_password)
+        btnSignInSignIn = findViewById(R.id.btn_signup_check)
+        btnSignInSignUp = findViewById(R.id.btn_sign_in)
 
         btnSignInSignUp?.setOnClickListener {
 
