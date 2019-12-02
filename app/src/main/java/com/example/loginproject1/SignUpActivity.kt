@@ -10,10 +10,8 @@ class SignUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
-
         makeController()
     }
-
 
     fun makeController()
     {
@@ -22,7 +20,6 @@ class SignUpActivity : AppCompatActivity() {
             val id = edit_signup_id.text.toString()
             val pw = edit_signup_pw.text.toString()
             val pwck  = edit_signup_checkpw.text.toString()
-
 
             if(name.isEmpty() || id.isEmpty() || pw.isEmpty()|| pwck.isEmpty())
             {
@@ -37,6 +34,7 @@ class SignUpActivity : AppCompatActivity() {
             }
 
             val res = requestSignUp(name,id,pw)
+
             if(res)
             {
                 finish()
@@ -44,19 +42,12 @@ class SignUpActivity : AppCompatActivity() {
             else
             {
                 Toast.makeText(this,"회원가입에 실패하였습니다.", Toast.LENGTH_SHORT).show()
-
-
             }
-
-
         }
     }
 
-
     private fun requestSignUp(name:String, id :String , pw:String) : Boolean
     {
-
         return true
-
     }
 }

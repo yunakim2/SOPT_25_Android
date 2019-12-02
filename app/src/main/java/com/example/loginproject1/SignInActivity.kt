@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.loginproject1.FollowerChart.FollowerActivity
 
 class SignInActivity : AppCompatActivity() {
 
@@ -18,12 +19,8 @@ class SignInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
-
         Log.d("with sopt","sign in activity in created")
-
         makeController()
-
-
     }
 
 
@@ -33,12 +30,9 @@ class SignInActivity : AppCompatActivity() {
         editSignInPW = findViewById(R.id.edit_password)
         btnSignInSignIn = findViewById(R.id.btn_signup_check)
         btnSignInSignUp = findViewById(R.id.btn_sign_in)
-
         btnSignInSignUp?.setOnClickListener {
-
-                    val intent = Intent(this@SignInActivity, SignUpActivity::class.java)
+            val intent = Intent(this@SignInActivity, SignUpActivity::class.java)
                     startActivity(intent)
-
         }
 
         btnSignInSignIn?.setOnClickListener {
@@ -54,10 +48,9 @@ class SignInActivity : AppCompatActivity() {
             val res = requestLogin(id,pw)
             if(res)
             {
-
-                val intent = Intent(this@SignInActivity, Myprofile::class.java)
+                val intent = Intent(this@SignInActivity, FollowerActivity::class.java)
+                intent.putExtra("text", id)
                 startActivity(intent)
-
             }
             else
             {
@@ -65,12 +58,10 @@ class SignInActivity : AppCompatActivity() {
                 editSignInID?.requestFocus()
 
             }
-
         }
     }
 
     private fun requestLogin(id:String,pw:String):Boolean{
-
         return true
     }
 

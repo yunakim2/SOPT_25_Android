@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".Myprofile"></activity>
+        <activity android:name=".FollowerChart.FollowerActivity"></activity>
         <activity android:name=".SignUpActivity" />
         <activity android:name=".SignInActivity">
             <intent-filter>
