@@ -1,9 +1,11 @@
-package com.example.loginproject1.FollowerChart
+package com.example.loginproject1.Adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.loginproject1.Data.FollowerRecyclerData
+import com.example.loginproject1.FollowerChart.FollowerRecyclerViewHolder
 import com.example.loginproject1.R
 
 class FollowerRecyclerAdapter (var datas:List<FollowerRecyclerData>):RecyclerView.Adapter<FollowerRecyclerViewHolder>(){

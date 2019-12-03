@@ -1,4 +1,4 @@
-package com.example.loginproject1.FollowerChart
+package com.example.loginproject1.Data
 
 data class FollowerRecyclerData (
     var img : Int,

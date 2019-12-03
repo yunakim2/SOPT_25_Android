@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FollowerChart.FollowerActivity">
-
+    tools:context=".GitRepoChart.GitRepoActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -24,15 +23,11 @@
             android:background="#f5a281"
             >
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/img_follower_profile"
+            <ImageView
+                android:id="@+id/img_gitrepo_profile"
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="150dp"
                 android:layout_marginTop="10dp"
-                app:civ_border_width="2dp"
-                app:civ_border_color="#ffffff"
-                android:elevation="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -40,20 +35,20 @@
                 tools:srcCompat="@drawable/dongdong" />
 
             <TextView
-                android:id="@+id/txt_follower_gitID"
+                android:id="@+id/txt_gitrepo_gitID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/ns_regular"
                 android:text="TextView"
-                android:textColor="#ffffff"
+                android:textColor="#D8D8D8"
                 android:textSize="13sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/img_follower_profile" />
+                app:layout_constraintTop_toBottomOf="@+id/img_gitrepo_profile" />
 
             <TextView
-                android:id="@+id/txt_follower_name"
+                android:id="@+id/txt_gitrepo_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -63,42 +58,41 @@
                 android:textColor="#ffffff"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_follower_gitID" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_gitrepo_gitID" />
 
             <TextView
-                android:id="@+id/txt_follower_title"
+                android:id="@+id/txt_gitrepo_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/ns_regular"
                 android:text="TextView"
-                android:textColor="#ffffff"
+                android:textColor="#D8D8D8"
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txt_follower_name" />
+                app:layout_constraintTop_toBottomOf="@id/txt_gitrepo_name" />
 
             <TextView
-                android:id="@+id/txt_follower_subtitle"
+                android:id="@+id/txt_gitrepo_subtitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="2dp"
                 android:fontFamily="@font/ns_regular"
                 android:text="TextView"
-                android:textColor="#ffffff"
+                android:textColor="#D8D8D8"
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txt_follower_title" />
+                app:layout_constraintTop_toBottomOf="@id/txt_gitrepo_title" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_follower_list"
+                android:id="@+id/rv_gitrepo_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txt_follower_subtitle" />
+                app:layout_constraintTop_toBottomOf="@id/txt_gitrepo_subtitle" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

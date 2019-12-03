@@ -1,4 +1,4 @@
-package com.example.loginproject1
+package com.example.loginproject1.ui.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.loginproject1.FollowerChart.FollowerActivity
+import com.example.loginproject1.R
 
 class SignInActivity : AppCompatActivity() {
 
@@ -49,7 +50,7 @@ class SignInActivity : AppCompatActivity() {
             if(res)
             {
                 val intent = Intent(this@SignInActivity, FollowerActivity::class.java)
-                intent.putExtra("text", id)
+                intent.putExtra("login",id)
                 startActivity(intent)
             }
             else
