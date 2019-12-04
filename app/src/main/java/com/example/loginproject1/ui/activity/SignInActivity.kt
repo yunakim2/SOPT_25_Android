@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.loginproject1.FollowerChart.FollowerActivity
+import com.example.loginproject1.GitRepoChart.GitRepoActivity
 import com.example.loginproject1.R
 
 class SignInActivity : AppCompatActivity() {

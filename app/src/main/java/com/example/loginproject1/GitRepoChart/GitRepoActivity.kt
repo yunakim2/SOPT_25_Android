@@ -9,6 +9,7 @@ import com.example.loginproject1.Data.FollowerRecyclerData
 import com.example.loginproject1.Data.GitRepoData
 import com.example.loginproject1.R
 import kotlinx.android.synthetic.main.activity_follower.*
+import kotlinx.android.synthetic.main.activity_git_repo.*
 
 class GitRepoActivity : AppCompatActivity() {
 
@@ -29,7 +30,7 @@ class GitRepoActivity : AppCompatActivity() {
         )
         gitrepoAdapter = GitRepoAdapter(datas)
         gitrepoAdapter.notifyDataSetChanged()
-        rv_follower_list.layoutManager = LinearLayoutManager(this@GitRepoActivity, LinearLayoutManager.VERTICAL,false)
-        rv_follower_list.adapter = gitrepoAdapter
+        rv_gitrepo_list.layoutManager = LinearLayoutManager(this@GitRepoActivity, LinearLayoutManager.VERTICAL,false)
+        rv_gitrepo_list.adapter = gitrepoAdapter
     }
 }
