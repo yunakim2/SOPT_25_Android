@@ -23,8 +23,6 @@ import org.w3c.dom.Text
 
 class FollowerActivity : AppCompatActivity() {
 
-    private var login: String = ""
-
     lateinit var followerAdapter: FollowerRecyclerAdapter
     lateinit var datas : List<FollowerRecyclerData>
         //response.body()!!.data
@@ -33,18 +31,32 @@ class FollowerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(com.example.loginproject1.R.layout.activity_follower)
 
+        makeprofile()
+        makeFollowerList()
+
+        btn_gitRepo?.setOnClickListener {
+            val intent = Intent(this@FollowerActivity, GitRepoActivity::class.java)
+            intent.putExtra("gitID",txt_follower_gitID.text.toString())
+            intent.putExtra("name",txt_follower_name.text.toString())
+            intent.putExtra("title",txt_follower_title.text.toString())
+            intent.putExtra("subtitle",txt_follower_subtitle.text.toString())
+            startActivity(intent)
+        }
+    }
+    fun makeprofile(){
 
         txt_follower_gitID.text = intent.getStringExtra("login")
         txt_follower_name.text = "Kim Yuna"
         txt_follower_title.text ="솝트 25기 YB 안드로이드 파트입니다."
         txt_follower_subtitle.text = "세미나 과제중 입니다."
 
-
-       Glide.with(this)
+        Glide.with(this)
             .load(R.drawable.dongdong)
             .into(img_follower_profile)
 
 
+    }
+    fun makeFollowerList(){
         datas = listOf(
             FollowerRecyclerData(
                 R.drawable.dongdong,
@@ -104,15 +116,6 @@ class FollowerActivity : AppCompatActivity() {
         rv_follower_list.layoutManager = LinearLayoutManager(this@FollowerActivity, LinearLayoutManager.VERTICAL,false)
         rv_follower_list.adapter = followerAdapter
 
-        img_list_icon?.setOnClickListener {
-            val intent = Intent(this@FollowerActivity, GitRepoActivity::class.java)
-            //  intent.putExtra("gitID",txt_follower_gitID.text.toString())
-            //  intent.putExtra("name",txt_follower_name.text.toString())
-            // intent.putExtra("gitID",txt_follower_title.text.toString())
-            // intent.putExtra("gitID",txt_follower_subtitle.text.toString())
-
-            startActivity(intent)
-        }
     }
 
 }
