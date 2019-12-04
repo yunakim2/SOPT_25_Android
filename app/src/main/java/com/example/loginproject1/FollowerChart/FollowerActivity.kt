@@ -3,6 +3,7 @@ package com.example.loginproject1.FollowerChart
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -11,7 +12,10 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.loginproject1.Adapter.FollowerRecyclerAdapter
+import com.example.loginproject1.Api.ServerServiceImpl
+import com.example.loginproject1.Data.FollowerData
 import com.example.loginproject1.Data.FollowerRecyclerData
+import com.example.loginproject1.Data.GetFollowerPageResponseData
 import com.example.loginproject1.GitRepoChart.GitRepoActivity
 import com.example.loginproject1.R
 import com.example.loginproject1.ui.activity.SignUpActivity
@@ -19,13 +23,17 @@ import kotlinx.android.synthetic.main.activity_follower.*
 import kotlinx.android.synthetic.main.activity_sign_in.*
 import kotlinx.android.synthetic.main.list_item_follower.*
 import org.w3c.dom.Text
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class FollowerActivity : AppCompatActivity() {
 
     lateinit var followerAdapter: FollowerRecyclerAdapter
-    lateinit var datas : List<FollowerRecyclerData>
-        //response.body()!!.data
+    //lateinit var datas : List<FollowerData>
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,7 +65,30 @@ class FollowerActivity : AppCompatActivity() {
 
     }
     fun makeFollowerList(){
-        datas = listOf(
+
+        val userList =ServerServiceImpl.service.getUsersList(2)
+
+        userList.enqueue(object : Callback<FollowerData> {
+            override fun onFailure(call: Call<FollowerData>, t: Throwable) {
+
+                Log.v("GET","Follower 연결 실패")
+            }
+
+            override fun onResponse(
+                call: Call<FollowerData>,
+                response: Response<FollowerData>
+            ) {
+                var datas = response.body()!!.data
+                followerAdapter = FollowerRecyclerAdapter(datas)
+                followerAdapter.notifyDataSetChanged()
+                rv_follower_list.layoutManager = LinearLayoutManager(this@FollowerActivity, LinearLayoutManager.VERTICAL,false)
+                rv_follower_list.adapter = followerAdapter
+
+            }
+
+        })
+
+       /* datas = listOf(
             FollowerRecyclerData(
                 R.drawable.dongdong,
                 R.drawable.like, "유나1", "yunakim1"
@@ -111,11 +142,7 @@ class FollowerActivity : AppCompatActivity() {
                 "yunakim9"
             )
         )
-        followerAdapter = FollowerRecyclerAdapter(datas)
-        followerAdapter.notifyDataSetChanged()
-        rv_follower_list.layoutManager = LinearLayoutManager(this@FollowerActivity, LinearLayoutManager.VERTICAL,false)
-        rv_follower_list.adapter = followerAdapter
-
+        */
     }
 
 }

@@ -5,10 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.loginproject1.Data.FollowerRecyclerData
+import com.example.loginproject1.Data.GetFollowerPageResponseData
 import com.example.loginproject1.FollowerChart.FollowerRecyclerViewHolder
 import com.example.loginproject1.R
 
-class FollowerRecyclerAdapter (var datas:List<FollowerRecyclerData>):RecyclerView.Adapter<FollowerRecyclerViewHolder>(){
+class FollowerRecyclerAdapter (var datas:List<GetFollowerPageResponseData>):RecyclerView.Adapter<FollowerRecyclerViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FollowerRecyclerViewHolder {
         val view: View = LayoutInflater
             .from(parent.context)
