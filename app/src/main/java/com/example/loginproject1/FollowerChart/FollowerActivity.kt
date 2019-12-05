@@ -36,8 +36,6 @@ class FollowerActivity : AppCompatActivity() {
     lateinit var followerAdapter: FollowerRecyclerAdapter
     //lateinit var datas : List<FollowerData>
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(com.example.loginproject1.R.layout.activity_follower)
@@ -51,6 +49,8 @@ class FollowerActivity : AppCompatActivity() {
             intent.putExtra("name",txt_follower_name.text.toString())
             intent.putExtra("title",txt_follower_title.text.toString())
             intent.putExtra("subtitle",txt_follower_subtitle.text.toString())
+            //val urlProfile = img_follower_profile.drawable.toString()
+            //intent.putExtra("profileImg",urlProfile)
             startActivity(intent)
         }
     }
