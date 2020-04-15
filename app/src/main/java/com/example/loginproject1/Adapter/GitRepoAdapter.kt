@@ -4,12 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.loginproject1.Data.GitRepoData
+import com.example.loginproject1.Data.GetGitRepoData
 import com.example.loginproject1.GitRepoChart.GitRepoViewHolder
-
 import com.example.loginproject1.R
 
-class GitRepoAdapter( var datas:List<GitRepoData>): RecyclerView.Adapter<GitRepoViewHolder>(){
+class GitRepoAdapter( var datas:List<GetGitRepoData>): RecyclerView.Adapter<GitRepoViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GitRepoViewHolder {
         val view: View = LayoutInflater
             .from(parent.context)
